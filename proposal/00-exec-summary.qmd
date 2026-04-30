@@ -4,3 +4,25 @@
 This section provides a condensed view of the entire proposal, one page long.
 It should be a comprehensive high-level overview that captures the essence of the proposal, including its goals, methods, expected outcomes, deliverables, and budget.
 -->
+
+Time series forecasting is essential for making informed decisions about future. A recent trend in time series forecasting is pre-trained models. 
+Pre-trained models are machine learning models developed using massive datasets, designed to be reused for similar tasks via transfer learning.  The two main advantages of pre-trained models are: 
+
+1. Less data required: You do not need large datasets to train a model from scratch.
+
+2. Faster training: The model has already trained and you need to tune the model for your purpose.
+
+This is very crucial when it is comes to time series forecasting as the forecasts need to be given as quickly as possible. There are few pre-trained models developed for time series forecasting. For example [Chronos](https://github.com/amazon-science/chronos-forecasting) by Amazon, [TimesFM](https://github.com/google-research/timesfm) by Google Researchers, [TimeGPT](https://github.com/Nixtla/nixtla) by Nixtla, [TinyTImeMixer](https://developer.ibm.com/tutorials/awb-foundation-model-time-series-forecasting/) by IBM. 
+
+
+In opython there are several Python libraries supporting pre-trained models. For example, [Darts](https://unit8co.github.io/darts/), [GluonTS](https://ts.gluon.ai/stable/) and [Hugging Face](https://huggingface.co/models?other=time-series).  However, there is no such package available in R that immediately pops up that supports pre-trained models in time series forecasting. 
+
+There could be packages in R that use the idea of pre-trained model for time series forecasting. For example [seer](https://cran.r-project.org/web/packages/seer/index.html) is one such package. Here the authors use the phrase "meta-learning". One disadvantage of this package is there is no way to tune the parameters for the given time series. This package gives the functionalists to set a pre-trained model not a pre-trained model. 
+
+Furthermore, most of the pre-trained models are trained based on financial time series, sales time series, etc. **The purpose of this project is to develop a smaller simple implementation of pre-trained model for time series forecasting compiling the work into an R package.** More specifically, in this research we are planning to develop a pre-trained model for epidemiological forecasting. This is useful in many different ways
+
+1. Give the idea of time series pre-trained model for R users. For example, in the field of time series forecasting one of the most referenced book is [Forecasting Principles and Practice by Rob Hyndman and George Athanasopoulos](https://otexts.com/fpp3/). This book has a both R version and a Python version. Link to the python varsion of the book is [Forecasting: Principles and Practice, the Pythonic Way](https://otexts.com/fpppy/). The python version of the book has a chapet called "Foundation forecasting models". This is not included in the R version. This highlights a gap in the filed. A light version a pre-trained model implemented in time series forecasting will help to fill the gap into some extent.
+
+2. Most frontline health workers do not have expertise in time series forecasting; therefore, pre-trained models are essential to support their decision-making.
+
+3. This provides a strong foundation to attract the attention of R users and developers toward pre-trained models.

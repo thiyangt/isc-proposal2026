@@ -1,10 +1,10 @@
 ---
-title: "Proposal Title"
+title: "An R package for integrating pre-trained models into epidemiological time series forecasting"
 author:
-  - name: Annie Easley
-    orcid: 5555-5555-5555-5555
+  - name: Thiyanga S. Talagala
+    orcid: 0000-0002-0656-9789
     affiliations:
-      - "Lewis Research Center, National Aeronautics and Space Administration"
+      - "Department of Statistics, Faculty of Applied Sciences, University of Sri Jayewardenepura, Sri Lanka"
 
 date: today
 date-format: iso
