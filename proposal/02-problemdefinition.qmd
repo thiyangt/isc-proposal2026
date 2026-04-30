@@ -4,21 +4,28 @@ bibliography: references.bib
 
 # The Problem
 
-```{=html}
-<!--
-Outlining the issue / weak point / problem to be solved by this
-proposal. This should be a compelling section that sets the reader up
-for the next section - the proposed solution!
 
-It is important to cover:
+## What the problem is
 
- - [ ] What the problem is
- - [ ] Who it affects
- - [ ] Why is it a problem
- - [ ] What will solving the problem enable (why should it be solved)
- - [ ] Brief summary of existing work and previous attempts (e.g., relevant R packages)
- - [ ] If proposing changes to R itself: letter of support from R Core member
--->
-```
+There is currently no R package that provides ready-to-use pre-trained model for time series forecasting. 
 
-An example in-text citation [@wickham2016].
+## Who it affects
+
+There is a rich tidyverse friendly time series analysis pipeline called tidyverts. This contains tsibble, fable, fabletools R packages that helps for data structures for storing time series data, functions to do data wraingling, and functions for time series forecasting. Pre-trained models are widely used across many domains today. This is a very effective approach for time series forecasting particularly with limited data. Even though R has already established a rich ecosystem for time series forecasting, the unavailability of pre-trained models makes R users to shift to alternative programming languages or limit their ability to use this efficient method for time series forecasting. 
+
+
+## Why is it a problem
+
+It becomes a problem because the absence of pre-trained models changes forecasting from a quick, accessible task into a slow, expertise-heavy process. This also makes R users underutilization of advanced methods. This forces R users to stick to forecasts models such as ARIMA, ETS, Neural Networks, Prophet, etc. In otherowrds, this limits the accessibility of modern forecasting methods for R users.
+
+## What will solving the problem enable (why should it be solved)
+
+In this work we will develop a light weight pre-trained model for epidemiology time series forecasting. To train the pre-trained model I will use epidemilogy counts data published by health ministries, institutions, etc. across multiple countries.  For example, 
+
+## Brief summary of existing work and previous attempts (e.g., relevant R packages)
+
+## If proposing changes to R itself: letter of support from R Core member
+
+No changes to R
+
+
