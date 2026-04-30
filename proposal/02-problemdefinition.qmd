@@ -20,9 +20,49 @@ It becomes a problem because the absence of pre-trained models changes forecasti
 
 ## What will solving the problem enable (why should it be solved)
 
-In this work we will develop a light weight pre-trained model for epidemiology time series forecasting. To train the pre-trained model I will use epidemilogy counts data published by health ministries, institutions, etc. across multiple countries.  For example, 
+In this work we will develop a light weight pre-trained model for epidemiology time series forecasting. To train the pre-trained model I will use epidemiology counts data published by health ministries, institutions, etc. across multiple countries.  For example, Epidemiology Unit, Ministry of Health, Sri Lanka published weekly epidemilogy reports as of [here](https://www.epid.gov.lk/weekly-epidemiological-report/weekly-epidemiological-report) corresponds to the following diseases:
 
+- Dengue fever
+
+- Dysentery
+
+- Encephalitis
+
+- Encephalitis fever
+
+- Food Poison
+
+- Leptospirosis
+
+- Typhus
+
+- Viral Hepatitis
+
+- H. Rabies
+
+- Chickenpox
+
+- Meningitis
+
+- Leishman
+
+- Tubeculosis
+
+- Leprosy
+
+I will be using all these weekly counts to my pre-trained model database. Inaddition to I will collect data from the following websites:
+
+[Institute for Health Metrics and Evaluation](https://vizhub.healthdata.org/gbd-results/)
+
+[WHO Tuberculosis  database](https://www.who.int/teams/global-tuberculosis-programme/data)
+ 
+[https://opendengue.org/](https://opendengue.org/)
+
+I will also explore freely available open-access databases for data collection. 
+ 
 ## Brief summary of existing work and previous attempts (e.g., relevant R packages)
+
+Previous packages
 
 ## If proposing changes to R itself: letter of support from R Core member
 
