@@ -58,7 +58,7 @@ I will be using all these weekly counts to my pre-trained model database. Inaddi
  
 [https://opendengue.org/](https://opendengue.org/)
 
-I will also explore freely available open-access databases for data collection. 
+I will also explore freely available open-access databases for data collection. Crrently, there is no single global website that contains clean “ready-made counts” for all these diseases together.
  
 ## Brief summary of existing work and previous attempts (e.g., relevant R packages)
 
