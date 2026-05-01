@@ -11,7 +11,15 @@ are proposed.
 
 ## Project team
 
-[Thiyanga S. Talagala]()
+[Thiyanga S. Talagala](https://thiyanga.netlify.app/)
+
+- Data collection
+
+- Data cleaning
+
+- Pre-trained model development
+
+- Documentation
 
 
 <!--

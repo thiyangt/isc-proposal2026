@@ -22,7 +22,31 @@ Including target dates is really important as you need to be committed
 and the ISC need to have a means of tracking delivery
 -->
 
+The work on the package development is scheduled for May 2026 - April 2027. 
+
+| Timeline | Tasks and milestones |
+|--------|--------------------|
+| May, June, July  2026  | Development of  database to train pre-trained model|
+| August, 2026 | Pre-train model development and cross-validate |
+| September, October 2026 | Development of the package |
+| November 2026 | Mid Progress Review and Mid project presentation to get feedback|
+| December 2026 | Continue the development work based on the feedback|
+|January 2027| Write and share a blog post about the work, release the first version of the package|
+|February 2027| Write a manual for the package and update pre-trained model using new data|
+|March 2027| Released second version of the package. Presentation to health care officers|
+| End of April 2027 | Final presentation|
+
+
+
 ## Other aspects
+
+A separate project website will be created to publish blog post, to updae about the news, such as release of the first version of the pre-trained model, etc.
+
+In addition, LinkedIn, X, BlueSky social media platforms will be used to increase the visibility of the work.
+
+An R Ladies Colombo event will be organized to promote work.
+
+I am also planning to present the work at R Medicine conference by R Consortium.
 
 <!--
 How will you ensure that your work is available to the widest number
@@ -58,3 +82,35 @@ to the project and the project period. The ISC reserves the right to vet
 how funds are used for each project separately. If in doubt, please reach
 out to us.
 -->
+
+Total budget required for the project: USD 3500
+
+1. Data collection:  USD 2000
+
+    Collect data from different organizations magazines, websites, etc.
+
+    Write codes for web scrapping to extract data from websites .
+    
+    Data quality analysis.
+    
+    Write codes to clean data and convert them into analysis ready tidy format.
+    
+2. Development of the pre-trained model: USD 1000
+
+    Train pre-trained model
+    
+    Hyper parameter-tuning
+    
+    Time-series cross validation
+
+
+3. Write documentations: USD 500
+
+    Project website development
+    
+    Write blog post
+    
+    Write package vignette (User manual)
+    
+    Talk/Workshop for health care/ decision-makers officers on how to use pre-trained model for epidemiology forecasting
+

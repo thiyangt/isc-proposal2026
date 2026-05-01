@@ -5,9 +5,24 @@ thorough understanding going in of what the risks are to delivery
 -->
 
 ## Definition of done
-<!--
-What does success look like?
--->
+
+The project’s definition of done includes the following deliverables:
+
+1. Development of a project website, with regularly published blog posts and news updates.
+
+2. Development of two R packages:
+
+    i. A database of epidemiological time series to support the training of pre-trained models. The R package name is `EpiDataHub` – Curated Epidemiological Time Series Repository
+
+    
+    ii. A pre-trained model package for time series forecasting. The R package name is `EpiCastNet` – Pre-trained Forecasting Models for Epidemiology.
+    
+  Both packages should be published on CRAN.
+
+3. Completion and delivery of the final project presentation.
+
+
+
 
 ## Measuring success
 <!--
@@ -15,8 +30,22 @@ How will we know when success is achieved, what markers can we use
 along the way
 -->
 
+
+The project will be considered a success if the following criteria are met:
+
+
+- The key deliverables are met: the package includes the planned functionality, which is documented and tested.
+- The documentation is available on the package website.
+- At least 75% of the open issues on the planned work are closed or at least become work-in-progress.
+- Feedback is sought (and incorporated as far as possible) from the R community.
+
+
 ## Future work
 <!--
 How could this be extended / developed in the future by yourself
 and/or the community in general?
 -->
+
+Future work will focus on continuously updating the epidemiological time series database and annually releasing updated versions of the pre-trained forecasting models. Additional efforts will include expanding the database to cover more diseases and regions, improving model accuracy through ongoing fine-tuning, and incorporating user feedback to enhance functionality and usability of the packages.
+
+Furthermore, by presenting this work at conferences, I plan to find strong collaborators for the project.

@@ -17,7 +17,7 @@ section.
 Include concrete actions you will take and estimated timeline.
 -->
 
-, there is no single global website that contains clean “ready-made counts” for all these diseases togethe
+There is no single global website that contains clean “ready-made counts” for all these diseases together. Furthermore, there is no R package to access pre-trained model in time series forecasting. In this project we develop a pre-trained model for epidemiology time series forecasting.
 
 ## Detail
 <!--
@@ -27,11 +27,89 @@ against the problem.
 Depending on project type the detail section should include:
 -->
 
+The project can be devided into three phases. 
+
+**Phase 1:** Preparation of database to develop pre-trained model
+
+Based on the database an R package will be developed named `EpiDataHub` – Curated Epidemiological Time Series Repository
+
+**Phase 2:** Train a pre-trained model
+
+**Phase 3:** Development of two R packages corresponding to work of Phase 1 and Phase 2.
+
+**Pre-trained modelling steps can be listed as follows:**
+
+Step 1: Train a global model
+
+```r
+global_data <- read.csv("all_districts_data.csv")
+
+rf_global <- randomForest(
+  disease_cases ~ lag_cases + disease_type + year + month + week + day + 
+  climate_type + area,
+  data = global_data,
+  ntree = 1000
+)
+```
+
+Step 2: Save model
+
+```r
+saveRDS(rf_global, "rf_global_model.rds") 
+```
+
+This model will be converted into an R package called `EpiCastNet` – Pre-trained Forecasting Models for Epidemiology.
+
+Step 3: Tune the model for a new given time series to generate forecasts for the new series.
+
+First generate forecast for the new series using global model. That is our pre-trained model
+
+```r
+local_data$global_pred <- predict(rf_global, newdata = local_data)
+```
+
+Develop separate local model to the new series and use the previous prediction from the global model as a predictor. This step is refereed to as tuning the model.
+
+```r
+rf_local <- randomForest(
+  dengue_cases ~ rainfall + temperature + humidity +
+    lag_cases + global_pred,
+  data = local_data,
+  ntree = 500
+)
+```
+
+The final forecast is a combination from global model, local model. Here the concept of staking is used to tune the model. Stacking (or stacked learning / stacked generalization) is a method where the prediction from one model is used as an input (feature) for another model.
+
+
+In summary
+
+Model 1: Pre-trained model
+
+Learns general/global patterns
+
+↓
+
+Its prediction becomes a new variable
+
+↓
+
+Model 2: Tune pre-trained model
+
+Uses that prediction + original predictors to make a better final prediction
+
 ### Minimum Viable Product
 
 <!--
 What is the smallest thing you can build that delivers value to your users?
 -->
+
+Development of two R packages:
+
+  i. A database of epidemiological time series to support the training of pre-trained models. The R package name is `EpiDataHub` – Curated Epidemiological Time Series Repository
+
+    
+  ii. A pre-trained model package for time series forecasting. The R package name is `EpiCastNet` – Pre-trained Forecasting Models for Epidemiology.
 
 ### Architecture
 
@@ -45,8 +123,14 @@ What does the high-level architecture look like?
 What assumptions are you making that, if proven false, would invalidate the project?
 -->
 
+Sufficient high-quality epidemiological time series data will be available from open-access sources to build a reliable database.
+
+If sufficient data are not available, feature-based data augmentation methods will be used to simulate data [@kang2020gratis]. 
+
+
 ### External dependencies
 
 <!--
 What external dependencies does the project have (e.g. libraries, services, other projects, etc.)?
 -->
+The project relies on several established R packages for modeling and time series analysis, including tidyverse, randomForest, tidymodels, xgboost, tsibble, fabletools, and fable. These are the main packages that will be used in the development. 

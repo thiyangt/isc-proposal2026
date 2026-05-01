@@ -11,7 +11,7 @@ There is currently no R package that provides ready-to-use pre-trained model for
 
 ## Who it affects
 
-There is a rich tidyverse friendly time series analysis pipeline called tidyverts. This contains tsibble, fable, fabletools R packages that helps for data structures for storing time series data, functions to do data wraingling, and functions for time series forecasting. Pre-trained models are widely used across many domains today. This is a very effective approach for time series forecasting particularly with limited data. Even though R has already established a rich ecosystem for time series forecasting, the unavailability of pre-trained models makes R users to shift to alternative programming languages or limit their ability to use this efficient method for time series forecasting. 
+There is a rich tidyverse[@tidyverse] friendly time series analysis pipeline called tidyverts. This contains tsibble [@tsibble], fable [@fable], fabletools [@fabletools] R packages that helps for data structures for storing time series data, functions to do data wrangling, and functions for time series forecasting. Pre-trained models are widely used across many domains today. This is a very effective approach for time series forecasting particularly with limited data. Even though R has already established a rich ecosystem for time series forecasting, the unavailability of pre-trained models makes R users to shift to alternative programming languages or limit their ability to use this efficient method for time series forecasting. 
 
 
 ## Why is it a problem
@@ -62,7 +62,21 @@ I will also explore freely available open-access databases for data collection. 
  
 ## Brief summary of existing work and previous attempts (e.g., relevant R packages)
 
-Previous packages
+Previous packages:
+
+`denguedatahub` R package: I compiled dengue data for 216 countries and compiled into a package called denguedatahub. The project website is at [https://denguedatahub.netlify.app/](https://denguedatahub.netlify.app/). This project is funded by RConortium ISC 2022 grant. Since 2022, I am maintaining this project. This dataset will also be used train the odel.
+
+`DISC`: The R package I developed [https://github.com/SMART-Research/DISC](https://github.com/SMART-Research/DISC) contains disese counts for Dysentery, Encephalitis, Encephalitis fever, Food Poison, Leptospirosis, Typhus, Viral Hepatitis, H. Rabies, Chickenpox, Meningitis, Leishman, Tubeculosis and Leprosy. This will also be used in pre-trained model development.
+
+`seer` package: The seer package provides implementations of a novel framework for forecast model selection using time series features. We call this framework FFORMS (Feature-based FORecast Model Selection). For more details see our [paper](https://onlinelibrary.wiley.com/doi/abs/10.1002/for.2963). The R package repository is: [https://github.com/thiyangt/seer](https://github.com/thiyangt/seer). This is a joint work with Prof Rob Hyndman and Prof George Athanasopoulos
+
+`vegcast`: Feature engineering to train a pre-trained model for vegetable price forecasting. This work is part of the project funded by [https://forecasters.org/programs/research-awards/forecasting-for-social-good-research-grant/](https://forecasters.org/programs/research-awards/forecasting-for-social-good-research-grant/). I am the 2025 F4SG grant receipient as listed on the website. The github repositoy of the project [https://github.com/thiyangt/vegcast](https://github.com/thiyangt/vegcast).  The project repository is [https://thiyangt.github.io/pricecast.vegetables/](https://thiyangt.github.io/pricecast.vegetables/).
+
+`tsdataleaks`: R package to identify data leaks in time series data available at: [https://github.com/thiyangt/tsdataleaks](https://github.com/thiyangt/tsdataleaks)
+
+`vegetablesSriLanka`: R package for vegetable prices in Sri Lanka. Link [https://github.com/thiyangt/vegetablesSriLanka](https://github.com/thiyangt/vegetablesSriLanka)
+
+In addition to there are many other packages I developed and published on CRAN.
 
 ## If proposing changes to R itself: letter of support from R Core member
 

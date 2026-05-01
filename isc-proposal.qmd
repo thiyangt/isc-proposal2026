@@ -6,7 +6,7 @@ author:
     affiliations:
       - "Department of Statistics, Faculty of Applied Sciences, University of Sri Jayewardenepura, Sri Lanka"
 
-date: today
+date: "2026-04-30"
 date-format: iso
 format:
   html:
