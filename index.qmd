@@ -1,0 +1,37 @@
+---
+title: "Two R packages: one integrating pre-trained models for epidemiological time series forecasting, and another providing a curated epidemiological database to support efficient model reuse and development."
+author:
+  - name: Thiyanga S. Talagala
+    orcid: 0000-0002-0656-9789
+    affiliations:
+      - "Department of Statistics, Faculty of Applied Sciences, University of Sri Jayewardenepura, Sri Lanka"
+
+date: "2026-04-30"
+date-format: iso
+format:
+  html:
+    embed-resources: true
+  hikmah-pdf:
+    geometry:
+      - left=1.25in
+      - right=1.25in
+bibliography: references.bib
+---
+
+
+
+
+{{< include proposal/00-exec-summary.qmd >}}
+
+{{< include proposal/01-signatories.qmd >}}
+
+{{< include proposal/02-problemdefinition.qmd >}}
+
+{{< include proposal/03-proposal.qmd >}}
+
+{{< include proposal/04-timeline.qmd >}}
+
+{{< include proposal/05-success.qmd >}}
+
+::: refs
+:::
