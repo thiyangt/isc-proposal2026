@@ -1,0 +1,1017 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage[top=10pc,bottom=10pc,left=11pc,right=11pc,heightrounded,left=1.25in,right=1.25in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+
+
+% -----------------------
+% CUSTOM PREAMBLE STUFF
+% -----------------------
+
+% -----------------
+% Typography tweaks
+% -----------------
+% Indent size
+\setlength{\parindent}{1pc}  % 1p0
+
+% Fix widows and orphans
+\usepackage[all,defaultlines=2]{nowidow}
+
+% List things
+\usepackage{enumitem}
+% Same document-level indentation for ordered and ordered lists
+\setlist[1]{labelindent=\parindent}
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+
+% Wrap definition list terms
+% https://tex.stackexchange.com/a/9763/11851
+\setlist[description]{style=unboxed}
+
+
+% For better TOCs
+\usepackage[titles]{tocloft}
+
+% Remove left margin in lists inside longtables
+% https://tex.stackexchange.com/a/378190/11851
+\AtBeginEnvironment{longtable}{\setlist[itemize]{nosep, wide=0pt, leftmargin=*, before=\vspace*{-\baselineskip}, after=\vspace*{-\baselineskip}}}
+
+% Allow for /singlespacing and /doublespacing
+\usepackage{setspace}
+
+
+% -----------------
+% Title block stuff
+% -----------------
+
+% Abstract
+\usepackage[overload]{textcase}
+\usepackage[runin]{abstract}
+\renewcommand{\abstractnamefont}{\sffamily\footnotesize\bfseries\MakeUppercase}
+\renewcommand{\abstracttextfont}{\sffamily\small}
+\setlength{\absleftindent}{\parindent * 2}
+\setlength{\absrightindent}{\parindent * 2}
+\abslabeldelim{\quad}
+\setlength{\abstitleskip}{-\parindent}
+
+
+% Keywords
+\newenvironment{keywords}
+{\vskip -3em \hspace{\parindent}\small\sffamily{\sffamily\footnotesize\bfseries\MakeUppercase{Keywords}}\quad}
+{\vskip 3em}
+
+  
+% Title
+\usepackage{titling}
+\setlength{\droptitle}{3em}
+\pretitle{\par\vskip 5em \begin{flushleft}\LARGE\sffamily\bfseries}
+\posttitle{\par\end{flushleft}\vskip 0.75em}
+
+
+% Authors
+%
+% PHEW this is complicated for a number of reasons!
+%
+% When using \and with multiple authors, the article class in LaTeX wraps each 
+% author block in a tabluar environment with a hardcoded center alignment. It's 
+% possible to use \preauthor{} to start tabulars with a left alignment {l}, but 
+% that only applies to the first author because the others all use \and with the 
+% hardcoded {c}. But we can override the \and command and add our own {l}
+%
+% (See https://github.com/rstudio/rmarkdown/issues/1716#issuecomment-560601691 
+% for an example of redefining \and to just be \\)
+%
+% That's all great, except tabulars have some amount of default horizontal 
+% padding, which makes left-aligned author blocks not actuall get fully 
+% left-aligned on the page. We can set the horizontal padding for the column to 
+% 0, but it requires some wonky syntax: {@{\hspace{0em}}l@{}}
+\renewcommand{\and}{\end{tabular} \hskip 3em \begin{tabular}[t]{@{\hspace{0em}}l@{}}}
+\preauthor{\begin{flushleft}
+           \lineskip 1.5em 
+           \begin{tabular}[t]{@{\hspace{0em}}l@{}}}
+\postauthor{\end{tabular}\par\end{flushleft}}
+
+% Omit the date since the \published command does that
+\predate{}
+\postdate{}
+
+% Command for a note at the top of the first page describing the publication
+% status of the paper.
+\newcommand{\published}[1]{%
+   \gdef\puB{#1}}
+   \newcommand{\puB}{}
+   \renewcommand{\maketitlehooka}{%
+       \par\noindent\footnotesize\sffamily \puB}
+
+
+% ------------------
+% Section headings
+% ------------------
+\usepackage{titlesec}
+\titleformat*{\section}{\Large\sffamily\bfseries\raggedright}
+\titleformat*{\subsection}{\large\sffamily\bfseries\raggedright}
+\titleformat*{\subsubsection}{\normalsize\sffamily\bfseries\raggedright}
+\titleformat*{\paragraph}{\small\sffamily\bfseries\raggedright}
+
+% \titlespacing{<command>}{<left>}{<before-sep>}{<after-sep>}
+% Starred version removes indentation in following paragraph
+\titlespacing*{\section}{0em}{2em}{0.1em}
+\titlespacing*{\subsection}{0em}{1.25em}{0.1em}
+\titlespacing*{\subsubsection}{0em}{0.75em}{0em}
+
+
+% -----------
+% Footnotes
+% -----------
+% NB: footmisc has to come after setspace and biblatex because of conflicts
+\usepackage[bottom, flushmargin]{footmisc}
+\renewcommand*{\footnotelayout}{\footnotesize}
+
+\addtolength{\skip\footins}{10pt}    % vertical space between rule and main text
+\setlength{\footnotesep}{5pt}  % vertical space between footnotes
+
+
+% ----------
+% Captions
+% ----------
+\usepackage[font={small,sf}, labelfont={small,sf,bf}]{caption}
+
+
+% --------
+% Macros
+% --------
+% pandoc will not convert text within \begin{} XXX \end{} to Markdown and will
+% treat it as regular TeX. Because of this, it's impossible to do stuff like
+% this:
+
+% \begin{landscape}
+%
+% | One | Two   |
+% |-----+-------|
+% | my  | table |
+% | is  | nice  |
+%
+% \end{landscape}
+%
+% Since it'll render like: | One | Two | |—–+——-| | my | table | | is | nice |
+% 
+% BUT, from this http://stackoverflow.com/a/41945462/120898 we can get around
+% this by creating new commands for \begin and \end, like this:
+\usepackage{pdflscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+
+% \blandscape
+%
+% | One | Two   |
+% |-----+-------|
+% | my  | table |
+% | is  | nice  |
+%
+% \elandscape
+
+% Same thing, but for generic groups
+% But can't use \bgroup and \egroup because those are built-in TeX things
+\newcommand{\stgroup}{\begingroup}
+\newcommand{\fingroup}{\endgroup}
+
+
+% ---------------------------
+% END CUSTOM PREAMBLE STUFF
+% ---------------------------
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Two R packages: one integrating pre-trained models for epidemiological time series forecasting, and another providing a curated epidemiological database to support efficient model reuse and development.},
+  pdfauthor={Thiyanga S. Talagala},
+  colorlinks=true,
+  linkcolor={DarkSlateBlue},
+  filecolor={Maroon},
+  citecolor={DarkSlateBlue},
+  urlcolor={DarkSlateBlue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+% -----------------------
+% END-OF-PREAMBLE STUFF
+% -----------------------
+
+
+
+% ---------------------- 
+% Title block elements
+% ---------------------- 
+\usepackage{orcidlink}  % Create automatic ORCID icons/links
+
+\title{Two R packages: one integrating pre-trained models for
+epidemiological time series forecasting, and another providing a curated
+epidemiological database to support efficient model reuse and
+development.}
+
+
+\author{
+{\large Thiyanga S. Talagala~\orcidlink{0000-0002-0656-9789}}%
+ \\%
+Department of Statistics, Faculty of Applied Sciences, University of Sri
+Jayewardenepura, Sri Lanka \\%
+{\footnotesize \url{}} \and
+}
+
+\date{}
+
+
+% Typeset URLs in the same font as their parent environment
+%
+% This has to come at the end of the preamble, after any biblatex stuff because 
+% some biblatex styles (like APA) define their own \urlstyle{}
+\usepackage{url}
+\urlstyle{same}
+
+% ---------------------------
+% END END-OF-PREAMBLE STUFF
+% ---------------------------
+\begin{document}
+% ---------------
+% TITLE SECTION
+% ---------------
+\published{\textbf{2026-04-30}}
+
+\maketitle
+
+
+
+% -------------------
+% END TITLE SECTION
+% -------------------
+
+
+
+\section{Executive Summary}\label{executive-summary}
+
+Total amount: USD 3500
+
+Time series forecasting is essential for making informed decisions about
+future. A recent trend in time series forecasting is pre-trained models.
+Pre-trained models are machine learning models developed using massive
+datasets, designed to be reused for similar tasks via transfer learning.
+The two main advantages of pre-trained models are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Less data required: You do not need large datasets to train a model
+  from scratch.
+\item
+  Faster training: The model has already trained and you need to tune
+  the model for your purpose.
+\end{enumerate}
+
+This is very crucial when it is comes to time series forecasting as the
+forecasts need to be given as quickly as possible. There are few
+pre-trained models developed for time series forecasting. For example
+\href{https://github.com/amazon-science/chronos-forecasting}{Chronos} by
+Amazon, \href{https://github.com/google-research/timesfm}{TimesFM} by
+Google Researchers, \href{https://github.com/Nixtla/nixtla}{TimeGPT} by
+Nixtla,
+\href{https://developer.ibm.com/tutorials/awb-foundation-model-time-series-forecasting/}{TinyTImeMixer}
+by IBM.
+
+In python there are several Python libraries supporting pre-trained
+models. For example, \href{https://unit8co.github.io/darts/}{Darts},
+\href{https://ts.gluon.ai/stable/}{GluonTS} and
+\href{https://huggingface.co/models?other=time-series}{Hugging Face}.
+However, there is no such package available in R that immediately pops
+up that supports pre-trained models in time series forecasting.
+
+There could be packages in R that use the idea of pre-trained model for
+time series forecasting. For example
+\href{https://cran.r-project.org/web/packages/seer/index.html}{seer} is
+one such package. Here the authors use the phrase ``meta-learning''. One
+disadvantage of this package is there is no way to tune the parameters
+for the given time series. This package gives the functionalists to set
+a pre-trained model not a pre-trained model.
+
+Furthermore, most of the pre-trained models are trained based on
+financial time series, sales time series, etc. \textbf{The purpose of
+this project is to develop a simple pre-trained model and a database for
+pre-training time series models, and to compile them into two R package
+(One R package for the pre-trained model, another R package for the
+pre-train model training database).} More specifically, in this research
+we are planning to develop a pre-trained model for epidemiological
+forecasting. This is useful in many different ways
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Give the idea of time series pre-trained model for R users. For
+  example, in the field of time series forecasting one of the most
+  referenced book is \href{https://otexts.com/fpp3/}{Forecasting
+  Principles and Practice by Rob Hyndman and George Athanasopoulos}.
+  This book has a both R version and a Python version. Link to the
+  python varsion of the book is
+  \href{https://otexts.com/fpppy/}{Forecasting: Principles and Practice,
+  the Pythonic Way}. The python version of the book has a chapet called
+  ``Foundation forecasting models''. This is not included in the R
+  version. This highlights a gap in the filed. A light version a
+  pre-trained model implemented in time series forecasting will help to
+  fill the gap into some extent.
+\item
+  Most frontline health workers do not have expertise in time series
+  forecasting; therefore, pre-trained models are essential to support
+  their decision-making.
+\item
+  This provides a strong foundation to attract the attention of R users
+  and developers toward pre-trained models.
+\item
+  In areas like computer vision and NLP, pre-trained models enable
+  strong performance out-of-the-box. The lack of similar resources in
+  R-based forecasting creates a gap in accessibility and efficiency.
+\item
+  Without pre-trained models, R users must design, tune, and validate
+  models from scratch, which requires advanced statistical and
+  computational knowledge.
+\end{enumerate}
+
+R is evolving toward more accessible, automated, and scalable workflows,
+but pre-trained models and plug-and-play forecasting systems are still
+limited, especially in applied domains like epidemiology.
+
+\section{Signatories}\label{signatories}
+
+\subsection{Project team}\label{project-team}
+
+\href{https://thiyanga.netlify.app/}{Thiyanga S. Talagala}
+
+\begin{itemize}
+\item
+  Data collection
+\item
+  Data cleaning
+\item
+  Pre-trained model development
+\item
+  Documentation
+\end{itemize}
+
+\subsection{Contributors}\label{contributors}
+
+None
+
+\subsection{Consulted}\label{consulted}
+
+None
+
+\section{The Problem}\label{the-problem}
+
+\subsection{What the problem is}\label{what-the-problem-is}
+
+There is currently no R package that provides ready-to-use pre-trained
+model for time series forecasting.
+
+\subsection{Who it affects}\label{who-it-affects}
+
+There is a rich tidyverse(\citeproc{ref-tidyverse}{Wickham et al. 2019})
+friendly time series analysis pipeline called tidyverts. This contains
+tsibble (\citeproc{ref-tsibble}{Wang, Cook, and Hyndman 2020}), fable
+(\citeproc{ref-fable}{O'Hara-Wild, Hyndman, and Wang 2024a}), fabletools
+(\citeproc{ref-fabletools}{O'Hara-Wild, Hyndman, and Wang 2024b}) R
+packages that helps for data structures for storing time series data,
+functions to do data wrangling, and functions for time series
+forecasting. Pre-trained models are widely used across many domains
+today. This is a very effective approach for time series forecasting
+particularly with limited data. Even though R has already established a
+rich ecosystem for time series forecasting, the unavailability of
+pre-trained models makes R users to shift to alternative programming
+languages or limit their ability to use this efficient method for time
+series forecasting.
+
+\subsection{Why is it a problem}\label{why-is-it-a-problem}
+
+It becomes a problem because the absence of pre-trained models changes
+forecasting from a quick, accessible task into a slow, expertise-heavy
+process. This also makes R users underutilization of advanced methods.
+This forces R users to stick to forecasts models such as ARIMA, ETS,
+Neural Networks, Prophet, etc. In otherowrds, this limits the
+accessibility of modern forecasting methods for R users.
+
+\subsection{What will solving the problem enable (why should it be
+solved)}\label{what-will-solving-the-problem-enable-why-should-it-be-solved}
+
+In this work we will develop a light weight pre-trained model for
+epidemiology time series forecasting. To train the pre-trained model I
+will use epidemiology counts data published by health ministries,
+institutions, etc. across multiple countries. For example, Epidemiology
+Unit, Ministry of Health, Sri Lanka published weekly epidemilogy reports
+as of
+\href{https://www.epid.gov.lk/weekly-epidemiological-report/weekly-epidemiological-report}{here}
+corresponds to the following diseases:
+
+\begin{itemize}
+\item
+  Dengue fever
+\item
+  Dysentery
+\item
+  Encephalitis
+\item
+  Encephalitis fever
+\item
+  Food Poison
+\item
+  Leptospirosis
+\item
+  Typhus
+\item
+  Viral Hepatitis
+\item
+  H. Rabies
+\item
+  Chickenpox
+\item
+  Meningitis
+\item
+  Leishman
+\item
+  Tubeculosis
+\item
+  Leprosy
+\end{itemize}
+
+I will be using all these weekly counts to my pre-trained model
+database. Inaddition to I will collect data from the following websites:
+
+\href{https://vizhub.healthdata.org/gbd-results/}{Institute for Health
+Metrics and Evaluation}
+
+\href{https://www.who.int/teams/global-tuberculosis-programme/data}{WHO
+Tuberculosis database}
+
+\url{https://opendengue.org/}
+
+I will also explore freely available open-access databases for data
+collection. Crrently, there is no single global website that contains
+clean ``ready-made counts'' for all these diseases together.
+
+\subsection{Brief summary of existing work and previous attempts (e.g.,
+relevant R
+packages)}\label{brief-summary-of-existing-work-and-previous-attempts-e.g.-relevant-r-packages}
+
+Previous packages:
+
+\texttt{denguedatahub} R package: I compiled dengue data for 216
+countries and compiled into a package called denguedatahub. The project
+website is at \url{https://denguedatahub.netlify.app/}. This project is
+funded by RConortium ISC 2022 grant. Since 2022, I am maintaining this
+project. This dataset will also be used train the odel.
+
+\texttt{DISC}: The R package I developed
+\url{https://github.com/SMART-Research/DISC} contains disese counts for
+Dysentery, Encephalitis, Encephalitis fever, Food Poison, Leptospirosis,
+Typhus, Viral Hepatitis, H. Rabies, Chickenpox, Meningitis, Leishman,
+Tubeculosis and Leprosy. This will also be used in pre-trained model
+development.
+
+\texttt{seer} package: The seer package provides implementations of a
+novel framework for forecast model selection using time series features.
+We call this framework FFORMS (Feature-based FORecast Model Selection).
+For more details see our
+\href{https://onlinelibrary.wiley.com/doi/abs/10.1002/for.2963}{paper}.
+The R package repository is: \url{https://github.com/thiyangt/seer}.
+This is a joint work with Prof Rob Hyndman and Prof George
+Athanasopoulos
+
+\texttt{vegcast}: Feature engineering to train a pre-trained model for
+vegetable price forecasting. This work is part of the project funded by
+\url{https://forecasters.org/programs/research-awards/forecasting-for-social-good-research-grant/}.
+I am the 2025 F4SG grant receipient as listed on the website. The github
+repositoy of the project \url{https://github.com/thiyangt/vegcast}. The
+project repository is
+\url{https://thiyangt.github.io/pricecast.vegetables/}.
+
+\texttt{tsdataleaks}: R package to identify data leaks in time series
+data available at: \url{https://github.com/thiyangt/tsdataleaks}
+
+\texttt{vegetablesSriLanka}: R package for vegetable prices in Sri
+Lanka. Link \url{https://github.com/thiyangt/vegetablesSriLanka}
+
+In addition to there are many other packages I developed and published
+on CRAN.
+
+\subsection{If proposing changes to R itself: letter of support from R
+Core
+member}\label{if-proposing-changes-to-r-itself-letter-of-support-from-r-core-member}
+
+No changes to R
+
+\section{The proposal}\label{the-proposal}
+
+\subsection{Overview}\label{overview}
+
+There is no single global website that contains clean ``ready-made
+counts'' for all these diseases together. Furthermore, there is no R
+package to access pre-trained model in time series forecasting. In this
+project we develop a pre-trained model for epidemiology time series
+forecasting.
+
+\subsection{Detail}\label{detail}
+
+The project can be devided into three phases.
+
+\textbf{Phase 1:} Preparation of database to develop pre-trained model
+
+Based on the database an R package will be developed named
+\texttt{EpiDataHub} -- Curated Epidemiological Time Series Repository
+
+\textbf{Phase 2:} Train a pre-trained model
+
+\textbf{Phase 3:} Development of two R packages corresponding to work of
+Phase 1 and Phase 2.
+
+\textbf{Pre-trained modelling steps can be listed as follows:}
+
+Step 1: Train a global model
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{global\_data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"all\_districts\_data.csv"}\NormalTok{)}
+
+\NormalTok{rf\_global }\OtherTok{\textless{}{-}} \FunctionTok{randomForest}\NormalTok{(}
+\NormalTok{  disease\_cases }\SpecialCharTok{\textasciitilde{}}\NormalTok{ lag\_cases }\SpecialCharTok{+}\NormalTok{ disease\_type }\SpecialCharTok{+}\NormalTok{ year }\SpecialCharTok{+}\NormalTok{ month }\SpecialCharTok{+}\NormalTok{ week }\SpecialCharTok{+}\NormalTok{ day }\SpecialCharTok{+} 
+\NormalTok{  climate\_type }\SpecialCharTok{+}\NormalTok{ area,}
+  \AttributeTok{data =}\NormalTok{ global\_data,}
+  \AttributeTok{ntree =} \DecValTok{1000}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Step 2: Save model
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{saveRDS}\NormalTok{(rf\_global, }\StringTok{"rf\_global\_model.rds"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+This model will be converted into an R package called
+\texttt{EpiCastNet} -- Pre-trained Forecasting Models for Epidemiology.
+
+Step 3: Tune the model for a new given time series to generate forecasts
+for the new series.
+
+First generate forecast for the new series using global model. That is
+our pre-trained model
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{local\_data}\SpecialCharTok{$}\NormalTok{global\_pred }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(rf\_global, }\AttributeTok{newdata =}\NormalTok{ local\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+Develop separate local model to the new series and use the previous
+prediction from the global model as a predictor. This step is refereed
+to as tuning the model.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rf\_local }\OtherTok{\textless{}{-}} \FunctionTok{randomForest}\NormalTok{(}
+\NormalTok{  dengue\_cases }\SpecialCharTok{\textasciitilde{}}\NormalTok{ rainfall }\SpecialCharTok{+}\NormalTok{ temperature }\SpecialCharTok{+}\NormalTok{ humidity }\SpecialCharTok{+}
+\NormalTok{    lag\_cases }\SpecialCharTok{+}\NormalTok{ global\_pred,}
+  \AttributeTok{data =}\NormalTok{ local\_data,}
+  \AttributeTok{ntree =} \DecValTok{500}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The final forecast is a combination from global model, local model. Here
+the concept of staking is used to tune the model. Stacking (or stacked
+learning / stacked generalization) is a method where the prediction from
+one model is used as an input (feature) for another model.
+
+In summary
+
+Model 1: Pre-trained model
+
+Learns general/global patterns
+
+↓
+
+Its prediction becomes a new variable
+
+↓
+
+Model 2: Tune pre-trained model
+
+Uses that prediction + original predictors to make a better final
+prediction
+
+\subsubsection{Minimum Viable Product}\label{minimum-viable-product}
+
+Development of two R packages:
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi}.}
+\item
+  A database of epidemiological time series to support the training of
+  pre-trained models. The R package name is \texttt{EpiDataHub} --
+  Curated Epidemiological Time Series Repository
+\item
+  A pre-trained model package for time series forecasting. The R package
+  name is \texttt{EpiCastNet} -- Pre-trained Forecasting Models for
+  Epidemiology.
+\end{enumerate}
+
+\subsubsection{Architecture}\label{architecture}
+
+\subsubsection{Assumptions}\label{assumptions}
+
+Sufficient high-quality epidemiological time series data will be
+available from open-access sources to build a reliable database.
+
+If sufficient data are not available, feature-based data augmentation
+methods will be used to simulate data
+(\citeproc{ref-kang2020gratis}{Kang, Hyndman, and Li 2020}).
+
+\subsubsection{External dependencies}\label{external-dependencies}
+
+The project relies on several established R packages for modeling and
+time series analysis, including tidyverse, randomForest, tidymodels,
+xgboost, tsibble, fabletools, and fable. These are the main packages
+that will be used in the development.
+
+\section{Project plan}\label{project-plan}
+
+\subsection{Start-up phase}\label{start-up-phase}
+
+\subsection{Technical delivery}\label{technical-delivery}
+
+The work on the package development is scheduled for May 2026 - April
+2027.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.2857}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.7143}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Timeline
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tasks and milestones
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+May, June, July 2026 & Development of database to train pre-trained
+model \\
+August, 2026 & Pre-train model development and cross-validate \\
+September, October 2026 & Development of the package \\
+November 2026 & Mid Progress Review and Mid project presentation to get
+feedback \\
+December 2026 & Continue the development work based on the feedback \\
+January 2027 & Write and share a blog post about the work, release the
+first version of the package \\
+February 2027 & Write a manual for the package and update pre-trained
+model using new data \\
+March 2027 & Released second version of the package. Presentation to
+health care officers \\
+End of April 2027 & Final presentation \\
+\end{longtable}
+
+\subsection{Other aspects}\label{other-aspects}
+
+A separate project website will be created to publish blog post, to
+updae about the news, such as release of the first version of the
+pre-trained model, etc.
+
+In addition, LinkedIn, X, BlueSky social media platforms will be used to
+increase the visibility of the work.
+
+An R Ladies Colombo event will be organized to promote work.
+
+I am also planning to present the work at R Medicine conference by R
+Consortium.
+
+\subsection{Budget \& funding plan}\label{budget-funding-plan}
+
+Total budget required for the project: USD 3500
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Data collection: USD 2000
+
+  Collect data from different organizations magazines, websites, etc.
+
+  Write codes for web scrapping to extract data from websites .
+
+  Data quality analysis.
+
+  Write codes to clean data and convert them into analysis ready tidy
+  format.
+\item
+  Development of the pre-trained model: USD 1000
+
+  Train pre-trained model
+
+  Hyper parameter-tuning
+
+  Time-series cross validation
+\item
+  Write documentations: USD 500
+
+  Project website development
+
+  Write blog post
+
+  Write package vignette (User manual)
+
+  Talk/Workshop for health care/ decision-makers officers on how to use
+  pre-trained model for epidemiology forecasting
+\end{enumerate}
+
+\section{Success}\label{success}
+
+\subsection{Definition of done}\label{definition-of-done}
+
+The project's definition of done includes the following deliverables:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Development of a project website, with regularly published blog posts
+  and news updates.
+\item
+  Development of two R packages:
+
+  \begin{enumerate}
+  \def\labelenumii{\roman{enumii}.}
+  \item
+    A database of epidemiological time series to support the training of
+    pre-trained models. The R package name is \texttt{EpiDataHub} --
+    Curated Epidemiological Time Series Repository
+  \item
+    A pre-trained model package for time series forecasting. The R
+    package name is \texttt{EpiCastNet} -- Pre-trained Forecasting
+    Models for Epidemiology.
+  \end{enumerate}
+\end{enumerate}
+
+Both packages should be published on CRAN.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Completion and delivery of the final project presentation.
+\end{enumerate}
+
+\subsection{Measuring success}\label{measuring-success}
+
+The project will be considered a success if the following criteria are
+met:
+
+\begin{itemize}
+\tightlist
+\item
+  The key deliverables are met: the package includes the planned
+  functionality, which is documented and tested.
+\item
+  The documentation is available on the package website.
+\item
+  At least 75\% of the open issues on the planned work are closed or at
+  least become work-in-progress.
+\item
+  Feedback is sought (and incorporated as far as possible) from the R
+  community.
+\end{itemize}
+
+\subsection{Future work}\label{future-work}
+
+Future work will focus on continuously updating the epidemiological time
+series database and annually releasing updated versions of the
+pre-trained forecasting models. Additional efforts will include
+expanding the database to cover more diseases and regions, improving
+model accuracy through ongoing fine-tuning, and incorporating user
+feedback to enhance functionality and usability of the packages.
+
+Furthermore, by presenting this work at conferences, I plan to find
+strong collaborators for the project.
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-kang2020gratis}
+Kang, Yanfei, Rob J Hyndman, and Feng Li. 2020. {``GRATIS: GeneRAting
+TIme Series with Diverse and Controllable Characteristics.''}
+\emph{Statistical Analysis and Data Mining: The ASA Data Science
+Journal} 13 (4): 354--76.
+
+\bibitem[\citeproctext]{ref-fable}
+O'Hara-Wild, Mitchell, Rob Hyndman, and Earo Wang. 2024a. \emph{Fable:
+Forecasting Models for Tidy Time Series}.
+\url{https://doi.org/10.32614/CRAN.package.fable}.
+
+\bibitem[\citeproctext]{ref-fabletools}
+---------. 2024b. \emph{Fabletools: Core Tools for Packages in the
+'Fable' Framework}.
+\url{https://doi.org/10.32614/CRAN.package.fabletools}.
+
+\bibitem[\citeproctext]{ref-tsibble}
+Wang, Earo, Dianne Cook, and Rob J Hyndman. 2020. {``A New Tidy Data
+Structure to Support Exploration and Modeling of Temporal Data.''}
+\emph{Journal of Computational and Graphical Statistics} 29 (3):
+466--78. \url{https://doi.org/10.1080/10618600.2019.1695624}.
+
+\bibitem[\citeproctext]{ref-tidyverse}
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy
+D'Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019.
+{``Welcome to the {tidyverse}.''} \emph{Journal of Open Source Software}
+4 (43): 1686. \url{https://doi.org/10.21105/joss.01686}.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}
